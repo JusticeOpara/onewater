@@ -1,9 +1,8 @@
 
 <template>
-    <nav class=" transition-all w-full h-[119px] bg-grefren-200 flex flex-col items-center justify-center md:bg-yellow-600 "
-        id="menu-">
+    <nav class=" transition-all w-full h-[119px] flex flex-col items-center justify-center md:bg-yellow-600 " id="menu-">
         <div class="bg-white flex items-center justify-between h-[84px] desktop:w-[1263px] px-[48px] py-[12px] w-full">
-            <div class="w-[200px] h-[60px] ">
+            <div class="w-[200px] h-[60px] mt-5 ">
                 <img src="../assets/onewater.svg" class="w-full" alt="one water logo" />
             </div>
 
@@ -13,28 +12,27 @@
                 <ul class="flex justify-center items-center list-none gap-6 cursor-pointer w-full h-full ">
                     <img src="../assets/search-icon.svg" class="w-[26px] h-auto" alt="search icon" />
                     <li><router-link to="/"
-                            class="hover:text-[#007aff] text-[1.5rem] font-Commissioner text-[#000]">about</router-link>
+                            class="hover:text-[#007aff] text-[1.3rem] font-medium font-Commissioner text-[#000]">about</router-link>
                     </li>
                     <li><router-link to="/about"
-                            class="hover:text-[#007aff] text-[1.5rem] font-Commissioner text-[#000]">event</router-link>
+                            class="hover:text-[#007aff] text-[1.3rem] font-medium font-Commissioner text-[#000]">event</router-link>
                     </li>
                     <li><router-link to="/about"
-                            class="hover:text-[#007aff] text-[1.5rem] font-Commissioner text-[#000]">engage</router-link>
+                            class="hover:text-[#007aff] text-[1.3rem] font-medium font-Commissioner text-[#000]">engage</router-link>
                     </li>
                     <img src="../assets/person-icon.svg" class="w-[28px]  h-auto" alt="person icon" />
                 </ul>
             </div>
 
-
-            <!-- for mobile navigation -->
-            <div
-                class="h-[45px] w-[45px] justify-center flex bg-red-500 desktop:hidden md:block cursor-pointer hover:text-primary transition-all ease-in-out duration-300">
-                <img @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': mobileNav }" src="../assets/navbar.svg"
+            <div @click="toggleMobileNav"
+                class="h-[45px] w-[45px] justify-center bg-green-100 flex mobile:visible desktop:hidden md:block cursor-pointer hover:text-primary transition-all ease-in-out duration-300">
+                <img   v-show="mobile" :class="{ 'icon-active': mobileNav }" src="../assets/navbar.svg"
                     class="w-[33.75px] h-auto cursor-pointer transition-[0.8s]" alt="navbar" />
             </div>
-            <transition name="mobile-nav">
-                <ul v-show="mobile" dropdown-nav
-                    class="flex fixed flex-col items-center w-full max-w-[250px] h-screen z-[100] px-[] bg-blue-500 top-0 overflow-y-auto overflow-x-hidden right-0 ">
+
+            <Transition name="mobile-nav">
+                <ul v-show="mobileNav"  @click.stop=""
+                    class="flex fixed flex-col items-center w-full max-w-[250px] h-screen z-[100]  bg-blue-500 top-0  left-0 ">
                     <img src="../assets/search-icon.svg" class="w-[26px] h-auto" alt="search icon" />
                     <li><router-link to="/"
                             class="hover:text-[#007aff] text-[1.5rem] mr-0 font-Commissioner text-[#000]">about</router-link>
@@ -47,7 +45,7 @@
                     </li>
                     <img src="../assets/person-icon.svg" class="w-[28px] h-auto" alt="person icon" />
                 </ul>
-            </transition>
+            </Transition>
         </div>
 
 
@@ -74,8 +72,8 @@
                                     style="text-decoration: underline;">[Click here]</a>.
                             </p>
                         </span>
-                        <!---->
-                    </li><!--]-->
+                    
+                    </li>
                 </ul>
 
 
@@ -85,40 +83,35 @@
     </nav>
 </template>
 
-<script>
+<script setup>
 
+import { ref, onMounted } from 'vue';
 
-export default {
-    name: 'Navbar',
-    data() {
-        return {
-            mobile: null,
-            mobileNav: null,
-            windowWidth: null
-        }
-    },
-    created() {
-        window.addEventListener('resize', this.checkScreen);
-        this.checkScreen
-    },
-    methods: {
-        toggleMobileNav() {
-            this.mobileNav = !this.mobileNav
-        }
-    },
-    checkScreen() {
-        this.windowWidth = window.innerWidth
-        if (this.windowWidth <= 915) {
-            this.mobile = true
-            return
-        }
-        this.mobile = false
-        this.mobileNav = false
-        return
-    }
+const mobile = ref(false);
+const mobileNav = ref(false); // Initialize mobileNav to false
+const windowWidth = ref(window.innerWidth);
 
-}
+const toggleMobileNav = () => {
+  console.log('toggleMobileNav called'); // Add this line for debugging
+  mobileNav.value = !mobileNav.value;
+};
+
+const checkScreen = () => {
+  windowWidth.value = window.innerWidth;
+  if (windowWidth.value <= 915) {
+    mobile.value = true;
+  } else {
+    mobile.value = false;
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('resize', checkScreen);
+  checkScreen();
+});
 </script>
+
+ 
   
 <style>
 .icon-active {
@@ -126,17 +119,27 @@ export default {
 }
 
 .dropdown-nav {
-    display: flex,
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: brown;
+    width: 100%;
+    max-width: 250px;
+    top: 10px;
+    right: 0;
 }
+
 .mobile-nav-enter-active,
-.mobile-nav-leave-active{
-transition: 1s ease all;
+.mobile-nav-leave-active {
+    transition: 1s ease all;
 }
+
 .mobile-nav-enter-from,
-.mobile-nav-leave-to{
-    transform:translateX(-250px)
+.mobile-nav-leave-to {
+    transform: translateX(-250px)
 }
-.mobile-nav-enter-to{
+
+.mobile-nav-enter-to {
     transform: translateX(0);
 }
 </style>

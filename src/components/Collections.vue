@@ -1,13 +1,13 @@
 <template>
-    <section class="w-[100vw] h-[100vh] flex flex-col items-center bg-blue-200">
+    <section class="w-[100%] h-[100vh] flex flex-col items-center bg-blue-200">
 
         <div class="flex w-[100vw] items-center justify-center">
-            <img src="../assets/dash.svg" alt="dotted line" />
+            <img src="../assets/dash.svg" class="w-[30%]" alt="dotted line" />
             <h1 class="text-2xl font-bold tracking-widest px-[4rem] font-Roboto uppercase">Collections</h1>
-            <img src="../assets/dash.svg"  alt="dotted line" />
+            <img src="../assets/dash.svg" class="w-[30%]" alt="dotted line" />
         </div>
 
-        <div class="flex justify-center flex-wrap mt-[4rem] bg-yellow-200 w-[1000px] mobile:mt-[0px] h-[201.67px]">
+        <div class="flex justify-center flex-wrap mt-[4rem] bg-yellow-200 w-[500px] mobile:mt-[0px] hr-[201.67px]">
 
             <a href="/collections/biodiversity"
                 class="text-between md:text-sm hover:bg-black hover:text-white 
@@ -21,7 +21,7 @@
             border-[0.1rem] border-grey4 px-[0.6rem] mr-[1.2rem] mt-[1.2rem] md:mt-[1.2rem]">Climate Change</a>
             <a href="/collections/biodiversity" class="text-between md:text-sm hover:bg-black hover:text-white 
             tranisition-all duration-300 hover:border-transparent h-[28.33px]
-            border-[0.1rem] border-grey4 px-[0.6rem] mr-[1.2rem] mt-[1.2rem] md:mt-[1.2rem]">Cities</a>
+            border-[0.1rem] border-grey4 px-[0.6rem] mr-[1.2rem] mt-[1.2rem] md:mt-[1.2rem]">Food and Agriculture</a>
             <a href="/collections/biodiversity" class="text-between md:text-sm hover:bg-black hover:text-white 
             tranisition-all duration-300 hover:border-transparent h-[28.33px]
             border-[0.1rem] border-grey4 px-[0.6rem] mr-[1.2rem] mt-[1.2rem] md:mt-[1.2rem]">Conservation</a>
