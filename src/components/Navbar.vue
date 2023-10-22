@@ -27,7 +27,7 @@
             </div>
 
             <div @click="toggleMobileNav"
-                class="h-[45px] w-[45px] justify-center bg-green-100 flex mobile:visible desktop:hidden md:block cursor-pointer hover:text-primary transition-all ease-in-out duration-300">
+                class="h-[45px] w-[45px] justify-center  flex mobile:visible desktop:hidden md:block cursor-pointer hover:text-primary transition-all ease-in-out duration-300">
                 <img   v-show="mobile" :class="{ 'icon-active': mobileNav }" src="../assets/navbar.svg"
                     class="w-[33.75px] h-auto cursor-pointer transition-[0.8s]" alt="navbar" />
             </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[100vh] w-full bg-slate-400 flex justify-center desktop:mb-[2.5rem]">
+    <div class="h-[100vh] w-full flex justify-center desktop:mb-[2.5rem]">
         <div class="flex flex-col justify-evenly items-center">
 
             <h1 class="font-light uppercase font-Roboto mobile:text-base text-lg tracking-widest"><span
