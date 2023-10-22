@@ -16,17 +16,17 @@
 
 
         <!-- create a linke to read ,watch and listen -->
-        <div class=" h-[45px]  w-[456px] my-[2.4rem] bg-gray-100 flex justify-center items-center text-center font-bold  "> 
-            <a href="/" class="cursor-pointer font-Roboto text-center  min-w-[12rem] flex items-center justify-center h-full hover:text-blue-200 transition-all duration-300 ease-in-out peer">read</a>
+        <div class=" h-[45px]  w-[456px] my-[2.4rem]  flex justify-center items-center text-center font-bold  "> 
+            <a href="/" class="cursor-pointer text-2xl font-Roboto text-center  min-w-[12rem] flex items-center justify-center hover:border-[2px] h-full hover:text-blue-200 transition-all duration-300 ease-in-out peer">read</a>
 
-            <a href="/" class="cursor-pointer font-Roboto text-center  min-w-[12rem] flex items-center justify-center bg-red-200 h-full hover:text-blue-200 transition-all duration-300 ease-in-out peer">watch</a>
+            <a href="/" class="cursor-pointer text-2xl  font-Roboto text-center  min-w-[12rem] flex items-center justify-center hover:border-[2px] h-full hover:text-blue-200 transition-all duration-300 ease-in-out peer">watch</a>
 
-            <a href="/" class="cursor-pointer font-Roboto text-center  min-w-[12rem] flex items-center justify-center bg-red-600 h-full hover:text-blue-200 transition-all duration-300 ease-in-out peer">listen</a>
+            <a href="/" class="cursor-pointer text-2xl font-Roboto text-center  min-w-[12rem] flex items-center justify-center hover:border-[2px] h-full hover:text-blue-200 transition-all duration-300 ease-in-out peer">listen</a>
         </div>
 
 
 
-        <div class="w-[950px] h-[250px] bg-white border-black border rounded flex py-[12px] px-[12px] mb-[24px]">
+        <div class="desktop:w-[950px] h-[250px] bg-white border-black border rounded flex py-[12px] px-[12px] mb-[24px]">
 
 
             <div class="w-[40%] h-full">
@@ -59,7 +59,7 @@
         </div>
 
 
-        <div class="w-[950px] h-[250px] bg-white border-black border rounded flex py-[12px] px-[12px] mb-[24px]">
+        <div class="desktop:w-[950px] h-[250px] bg-white border-black border rounded flex py-[12px] px-[12px] mb-[24px]">
 
             <div class="w-[60%] h-full px-8 font-Commissioner flex flex-col justify-evenly">
                 <div class="flex justify-between">

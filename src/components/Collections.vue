@@ -1,5 +1,5 @@
 <template>
-    <section class="w-[100%] h-[100vh] flex flex-col items-center bg-blue-200">
+    <section class="w-[100%] h-[100%] mb-10 flex flex-col items-center ">
 
         <div class="flex w-[100vw] items-center justify-center">
             <img src="../assets/dash.svg" class="w-[30%]" alt="dotted line" />
@@ -7,7 +7,7 @@
             <img src="../assets/dash.svg" class="w-[30%]" alt="dotted line" />
         </div>
 
-        <div class="flex justify-center flex-wrap mt-[4rem] bg-yellow-200 w-[500px] mobile:mt-[0px] hr-[201.67px]">
+        <div class="flex justify-center flex-wrap mt-[4rem] w-[500px] mobile:mt-[0px] hr-[201.67px]">
 
             <a href="/collections/biodiversity"
                 class="text-between md:text-sm hover:bg-black hover:text-white 
@@ -32,7 +32,7 @@
             <h1 class="uppercase font-bold tracking-widest text-black text-2xl text-center font-Roboto ">Subscribe</h1>
 
 
-            <div class="h-[52px] bg-red-500  flex w-[1000px] px-[6.2rem] py-[0.6rem]  relative items-center max-w-[100rem] divide-x-2 divide-blue-300">
+            <div class="h-[52px] bg-red-200 rounded-[8rem]  flex w-[1000px] px-[6.2rem] py-[0.6rem]  relative items-center max-w-[100rem] divide-x-2 divide-blue-300">
             
                 <div class="relative h-full w-full ">
                     <input

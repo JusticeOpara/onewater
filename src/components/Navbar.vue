@@ -8,16 +8,18 @@
 
 
             <div v-show="!mobile"
-                class="flex items-center justify-center desktop:h-[40px] md:bg-yellow-600 mobile:hidden desktop:w-[353px]">
+                class="flex items-center justify-center desktop:h-[40px] md:bg-yellow-600 mobile:hidden desktop:w-[353px]  ">
                 <ul class="flex justify-center items-center list-none gap-6 cursor-pointer w-full h-full ">
+                    <!-- <input class="bg-[#f0f0f0] rounded-[0.2rem] max-height-[30rem] outline-none resize-none " type="text" placeholder="search"/> -->
+                    
                     <img src="../assets/search-icon.svg" class="w-[26px] h-auto" alt="search icon" />
                     <li><router-link to="/"
                             class="hover:text-[#007aff] text-[1.3rem] font-medium font-Commissioner text-[#000]">about</router-link>
                     </li>
-                    <li><router-link to="/about"
+                    <li><router-link to="/event"
                             class="hover:text-[#007aff] text-[1.3rem] font-medium font-Commissioner text-[#000]">event</router-link>
                     </li>
-                    <li><router-link to="/about"
+                    <li><router-link to="/"
                             class="hover:text-[#007aff] text-[1.3rem] font-medium font-Commissioner text-[#000]">engage</router-link>
                     </li>
                     <img src="../assets/person-icon.svg" class="w-[28px]  h-auto" alt="person icon" />
@@ -32,24 +34,45 @@
 
             <Transition name="mobile-nav">
                 <ul v-show="mobileNav"  @click.stop=""
-                    class="flex fixed flex-col items-center w-full max-w-[250px] h-screen z-[100]  bg-blue-500 top-0  left-0 ">
-                    <img src="../assets/search-icon.svg" class="w-[26px] h-auto" alt="search icon" />
-                    <li><router-link to="/"
-                            class="hover:text-[#007aff] text-[1.5rem] mr-0 font-Commissioner text-[#000]">about</router-link>
+                    class="flex fixed flex-col items-center justify-evenly w-full max-w-[250px] h-screen z-[100]  bg-white top-0  left-0 font-Roboto">
+                  
+                  <div class="w-[120px] h-[45px] bg-black text-white flex justify-center items-center">
+                   <span> English</span> 
+                  </div>
+                    <li class="flex bg-white gap-5"> 
+                         <img src="../assets/search-icon.svg" class="w-[26px] h-auto" alt="search icon" />
+                         <router-link  class="hover:text-[#007aff] text-xl mr-0  text-[#000]">search</router-link></li>
+                   
+                    <li class="flex gap-5">
+                        <img src="../assets/eye.svg" class="w-[26px] h-auto" alt="about-icon"/>
+                        <router-link to="/"
+                            class="hover:text-[#007aff] text-xl mr-0 text-[#000]">about</router-link>
                     </li>
-                    <li><router-link to="/about"
-                            class="hover:text-[#007aff] text-[1.5rem] mr-0 font-Commissioner text-[#000]">event</router-link>
+                    <li class="flex gap-5">
+                        <img src="../assets/event.svg" class="w-[26px] h-auto" alt="event-icon"/>
+                        <router-link to="/about"
+                            class="hover:text-[#007aff] text-xl mr-0 text-[#000]">event</router-link>
                     </li>
-                    <li><router-link to="/about"
-                            class="hover:text-[#007aff] text-[1.5rem] mr-0 font-Commissioner text-[#000]">engage</router-link>
+                    <li class="flex gap-5">
+                        <img src="../assets/person-icon.svg"  class="w-[26px] h-auto"  alt=" person-icon"/>
+                        <router-link to="/about"
+                            class="hover:text-[#007aff] text-xl mr-0 font-light text-[#000]">engage</router-link>
                     </li>
-                    <img src="../assets/person-icon.svg" class="w-[28px] h-auto" alt="person icon" />
+                
+                    <li class="flex gap-5">
+                        
+                        <img src="../assets/person-icon.svg"  class="w-[26px] h-auto"  alt=" person-icon"/>
+                        <router-link to="/about"
+                            class="hover:text-[#007aff] text-xl mr-0 font-light text-[#000]">Podcasts</router-link>
+                    </li>
+                    
+                    <h1 class="font-bold font-Roboto text-xl leading-normal">Collection</h1>
                 </ul>
             </Transition>
         </div>
 
 
-        <div class="text-base font-Roboto font-medium tracking-widest overflow-hidden whitespace-nowrap   bg-red-300">
+        <div class="text-base font-Roboto font-medium tracking-widest overflow-hidden whitespace-nowrap border-y-[1px] border-black">
 
             <marquee>
 
@@ -82,6 +105,20 @@
 
     </nav>
 </template>
+                    
+<!-- input__field[data-v-2f38afa9] {
+    background: #f0f0f0;
+    border-radius: 0.2rem;
+    color: #000;
+    font-family: greycliff-cf;
+    height: 100%;
+    max-height: 30rem;
+    outline: none;
+    padding: 1.2rem 0.8rem 0.6rem;
+    resize: none;
+    vertical-align: top;
+    width: 100%;
+} -->
 
 <script setup>
 
